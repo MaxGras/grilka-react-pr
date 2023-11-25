@@ -4,7 +4,7 @@ import ButtonWrapperOrder from './buttonWrapper'
 export default function FrontDescrp() {
 
   return (
-    <div className=" relative pb-[10%]  flex flex-col  h-[90vh] text-white gap-4">
+    <div className=" relative pb-[10%]  flex flex-col   text-white gap-4">
       <div className="flex flex-col px-8 py-4">
         <p className="text-[13px] self-start">Замовляйте 4 та більше одиниць -</p>
         <p className="text-[13px] self-end">отримуйте <span className="text-[#FEAD2F]">безкоштовну</span> доставку</p>
