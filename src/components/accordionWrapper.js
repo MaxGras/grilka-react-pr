@@ -27,7 +27,7 @@ export default function AccordionWrapper({listOfLi, name = "Переваги", i
             id="panel1a-header"
 
           >
-            <Typography sx={{ fontFamily: "Segoe UI", fontWeight: "500", fontSize: '0.95em' }}>{name}</Typography>
+            <Typography sx={{ fontWeight: "500", fontSize: '1.2em', fontWeight:"600" }}>{name}</Typography>
           </AccordionSummary>
           <AccordionDetails     >
             <div sx={{ fontFamily: "Segoe UI", fontWeight: "350", fontSize: '0.9em' }}>
