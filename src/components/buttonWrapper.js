@@ -8,7 +8,10 @@ import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import CloseIcon from '@mui/icons-material/Close';
 import OrderPicker from "./orderPicker";
 import { v4 as uuidv4 } from 'uuid';
-
+import img_1 from '../assets/images/frontImage.png'
+import img_2 from '../assets/images/Slider_1_1.jpg'
+import img_3 from '../assets/images/Slider_2_5.jpg'
+import img_4 from '../assets/images/Slider_2_3.jpg'
 export default function ButtonWrapperOrder({ positionValue = "none", topValue = "0" }) {
   const [open, setOpen] = useState(false);
   const [helperOpenModal, setHelperOpenModal] = useState(false);
@@ -73,12 +76,46 @@ export default function ButtonWrapperOrder({ positionValue = "none", topValue = 
         })
       })
         .then((response) => response.json())
-        .then(handleSuccessFetch())
+        .finally(()=>{
+          setNewData((prevData) => ({
+            ...prevData,
+            model: {
+              "M":0,
+              "L":0,
+              "XL":0,
+              "Ultra":0
+            }
+          }))
+          handleSuccessFetch()
+        })
     } else {
       setHelperOpenModal(true);
     }
 
   }
+
+  const handleDecrement = (type)=>{
+    if (dataValue.model[type] > 0) {
+      setNewData((prevData) => ({
+        ...prevData,
+        model: {
+          ...prevData.model,
+          [type]: --prevData.model[type]
+        }
+      }))
+  }}
+  const handleIncrement = (type)=>{
+    if (dataValue.model[type] < 10) {
+      setNewData((prevData) => ({
+        ...prevData,
+        model: {
+          ...prevData.model,
+          [type]: ++prevData.model[type]
+        }
+      }))
+  }}
+
+
   return (
     <>
       <Button onClick={() => { setOpen(true) }} variant="contained" sx={{
@@ -115,27 +152,43 @@ export default function ButtonWrapperOrder({ positionValue = "none", topValue = 
           <div className="flex justify-end px-[5%]  h-[5%] pointer w-full" onClick={handleClose}><IconButton ><CloseIcon sx={{ fill: '#3C4152' }}></CloseIcon></IconButton ></div>
           <span className={spanClassName}>Номер телефону <span className="text-[#EB6856] font-[600] text-[1.2em]">*</span></span>
           <input required type="tel" name="telephoneNumber" onChange={(e) => handleChangeInput(e)} className={strInputClassName} />
-          <span className={spanClassName}>Прізвище Ім’я По батькові</span>
-          <input className={strInputClassName} name="initials" onChange={(e) => handleChangeInput(e)} type="text" />
-          <span className={spanClassName}>Місто та номер відділення</span>
-          <input className={strInputClassName} name="cityAndDep" onChange={(e) => handleChangeInput(e)} type="text" />
-
-
-          {showOrderPickers.map(({ id, isVisible }, index) => (
-            isVisible && (
-              <div key={id} className="w-full px-[9%] flex justify-between items-end h-[7vh]">
-                <OrderPicker
-                  data={dataValue}
-                  id={id}
-                  showOrderPickers={showOrderPickers}
-                  setShowOrderPickers={setShowOrderPickers}
-                  setNewData={setNewData}
-                  index={index}
-                  spanClassName={spanClassName} />
-
+          
+        <div className="grid grid-cols-2 grid-rows-2 gap-6">
+          <div className="">
+            <img className="w-[150px] h-[170px] object-contain rounded-[15px]"  src={img_1}/>
+            <div className="bg-[#FFFFFF]/50 flex mt-2  h-[25px]  self-center  w-full justify-between	 items-center rounded-[27px] ">
+              <span className="px-2" onClick={()=>handleDecrement('M')}>-</span>
+                <span>{dataValue.model.M}</span>
+                <span className="px-2"  onClick={()=>handleIncrement('M')} >+</span>
               </div>
-            )
-          ))}
+          </div>
+          <div className="">
+            <img className="w-[150px] h-[170px] object-cover rounded-[15px]"  src={img_2}/>
+            <div className="bg-[#FFFFFF]/50 flex h-[25px]  mt-2  self-center  w-full justify-between	 items-center rounded-[27px] ">
+              <span className="px-2" onClick={()=>handleDecrement('L')} >-</span>
+                <span>{dataValue.model.L}</span>
+                <span className="px-2" onClick={()=>handleIncrement('L')} >+</span>
+              </div>
+          </div>
+          <div className="">
+            <img className="w-[150px] h-[170px] object-cover rounded-[15px]"  src={img_3}/>
+            <div className="bg-[#FFFFFF]/50 flex h-[25px]  mt-2  self-center  w-full justify-between	 items-center rounded-[27px] ">
+              <span className="px-2" onClick={()=>handleDecrement('XL')} >-</span>
+                <span>{dataValue.model.XL}</span>
+                <span className="px-2" onClick={()=>handleIncrement('XL')} >+</span>
+              </div>
+          </div>
+          <div className="">
+            <img className="w-[150px] h-[170px] object-cover rounded-[15px]"  src={img_4}/>
+            <div className="bg-[#FFFFFF]/50 flex h-[25px]   mt-2 self-center  w-full justify-between	 items-center rounded-[27px] ">
+              <span className="px-2" onClick={()=>handleDecrement('Ultra')} >-</span>
+                <span>{dataValue.model.Ultra}</span>
+                <span className="px-2" onClick={()=>handleIncrement('Ultra')}>+</span>
+              </div>
+          </div>
+          
+          
+        </div>
 
 
           <span className={spanClassName}>Коментар</span>
