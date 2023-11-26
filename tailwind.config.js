@@ -10,6 +10,7 @@ module.exports = {
         "TimerIcon": "url(/src/assets/images/TimerIcon.png)",
         "CardIcong": "url(/src/assets/images/CardIcon.png)",
         'promo-svg': "url('/src/assets/svg/svg.minus.svg')",
+        "fourImages": "url('/src/assets/images/fourImages.jpg')",
       }
     },
   },

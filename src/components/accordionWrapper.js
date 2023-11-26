@@ -32,7 +32,7 @@ export default function AccordionWrapper({listOfLi, name = "Переваги", i
           <AccordionDetails     >
             <div sx={{ fontFamily: "Segoe UI", fontWeight: "350", fontSize: '0.9em' }}>
               <ul className = {strUlClass += (!isUl) ? ` list-disc`: ` list-none	`} >
-               {listOfLi.map((item,index)=>(<li key={index}>{item}</li>))}
+               {listOfLi.map((item,index)=>(<li className={isUl ? 'mt-[10px]' : 'gap-0'} key={index}>{item}</li>))}
               </ul>
             </div>
           </AccordionDetails>

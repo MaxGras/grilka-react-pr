@@ -1,5 +1,5 @@
 import FrontDescrp from "./components/frontPartDescrp";
-import Header from "./components/headerComponent";
+
 import MainDescrp from "./components/mainPartDescrp";
 
 function App() {

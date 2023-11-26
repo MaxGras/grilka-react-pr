@@ -3,6 +3,10 @@ import AddIcon from '@mui/icons-material/Add';
 import { v4 as uuidv4 } from 'uuid';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useState } from "react"
+import img_1 from '../assets/images/frontImage.png'
+import img_2 from '../assets/images/Slider_1_1.jpg'
+import img_3 from '../assets/images/Slider_2_5.jpg'
+import img_4 from '../assets/images/Slider_2_3.jpg'
 
 export default function OrderPicker({data,setNewData,spanClassName,id,index,showOrderPickers,setShowOrderPickers}){
     const [chosen, setChosen] = useState("Ultra");
@@ -88,18 +92,18 @@ export default function OrderPicker({data,setNewData,spanClassName,id,index,show
 
 
               >
-                <MenuItem value={"M"}>M</MenuItem>
-                <MenuItem value={"L"}>L</MenuItem>
-                <MenuItem value={"XL"}>XL</MenuItem>
-                <MenuItem value={"Ultra"}>Ultra</MenuItem>
+                <MenuItem value={"M"}></MenuItem>
+                <MenuItem value={"L"}></MenuItem>
+                <MenuItem value={"XL"}></MenuItem>
+                <MenuItem value={"Ultra"}></MenuItem>
               </Select>
             </div>
             <div className="flex flex-col  items-center gap-[1vh] justify-between  w-[30%]">
               <span className={spanClassName}>Кількість</span>
-              <div className="bg-[#FFFFFF]/50 flex ml-[10%] self-center h-[60%] w-full justify-between	 items-center rounded-[27px] ">
-                <IconButton sx={{ paddingBlock: "2.5%", width: "30%" }} size="small" onClick={handleDecrement}>-</IconButton >
+              <div className="bg-[#FFFFFF]/50 flex ml-[10%]  self-center h-[60%] w-full justify-between	 items-center rounded-[27px] ">
+              <span className="px-2"  onClick={handleDecrement}>-</span>
                 <span>{data.model[chosen]}</span>
-                <IconButton sx={{ paddingBlock: "2.5%", width: "30%" }} size="small" onClick={handleIncrement}>+</IconButton >
+                <span className="px-2" onClick={handleIncrement}>+</span>
               </div>
            
             </div>
