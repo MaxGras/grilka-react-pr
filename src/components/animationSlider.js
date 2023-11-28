@@ -24,7 +24,7 @@ const animationStyles = {
 
     return (
 
-        <div className=" mt-[5%] z-10 relative flex justify-between text-center items-center  px-[14%] bg-[#CFD3DB] shadow-md h-[7vh] rounded-[27px] text-[0.95em]"   >
+        <div className=" mt-[5%] z-10 relative flex justify-between text-center items-center px-[5%] sm:px-[14%] bg-[#CFD3DB] shadow-md h-[7vh] rounded-[27px] text-[0.95em]"   >
             <p className="z-50  text-white" style={animTextStyle}>Звичайна ціна
             <del className="block text-[1em]  font-[500]">{firstPrice}</del>
             </p>

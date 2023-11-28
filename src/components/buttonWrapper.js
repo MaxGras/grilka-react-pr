@@ -8,6 +8,8 @@ import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import CloseIcon from '@mui/icons-material/Close';
 import OrderPicker from "./orderPicker";
 import { v4 as uuidv4 } from 'uuid';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import img_1 from '../assets/images/frontImage.png'
 import img_2 from '../assets/images/Slider_1_1.jpg'
 import img_3 from '../assets/images/Slider_2_5.jpg'
@@ -149,7 +151,7 @@ export default function ButtonWrapperOrder({ positionValue = "none", topValue = 
         </Box>
       </Modal>
       <Modal open={open} onClose={handleClose} className="flex justify-center items-center">
-        <Box className={"bg-[#CFD3DB] rounded-[27px]  w-[80%] gap-[1.3vh] flex flex-col  py-[5%] items-center "}>
+        <Box className={"bg-[#CFD3DB] rounded-[27px] lg:w-[370px] w-[90%] sm:w-[70%] gap-[1.3vh] flex flex-col lg:py-[1%] py-[5%] items-center "}>
 
           <div className="flex justify-end px-[5%]  h-[5%] pointer w-full" onClick={handleClose}><IconButton ><CloseIcon sx={{ fill: '#3C4152' }}></CloseIcon></IconButton ></div>
           <span className={spanClassName}>Номер телефону <span className="text-[#EB6856] font-[600] text-[1.2em]">*</span></span>
@@ -159,33 +161,33 @@ export default function ButtonWrapperOrder({ positionValue = "none", topValue = 
             <div className="">
               <img className="w-[150px] h-[170px] object-contain rounded-[15px]" src={img_1} />
               <div className="bg-[#FFFFFF]/50 flex mt-2  h-[25px]  self-center  w-full justify-between	 items-center rounded-[27px] ">
-                <span className="px-2" onClick={() => handleDecrement('M')}>-</span>
+                <span className="px-2 text-[25px] w-[30%] text-center" onClick={() => handleDecrement('M')}><RemoveIcon sx={{mb:"4px"}}/></span>
                 <span>{dataValue.model.M}</span>
-                <span className="px-2" onClick={() => handleIncrement('M')} >+</span>
+                <span className="px-2  text-[25px] w-[30%] text-center" onClick={() => handleIncrement('M')} ><AddIcon sx={{mb:"6px"}}/></span>
               </div>
             </div>
             <div className="">
               <img className="w-[150px] h-[170px] object-cover rounded-[15px]" src={img_2} />
               <div className="bg-[#FFFFFF]/50 flex h-[25px]  mt-2  self-center  w-full justify-between	 items-center rounded-[27px] ">
-                <span className="px-2" onClick={() => handleDecrement('L')} >-</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleDecrement('L')} ><RemoveIcon sx={{mb:"3px"}}/></span>
                 <span>{dataValue.model.L}</span>
-                <span className="px-2" onClick={() => handleIncrement('L')} >+</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleIncrement('L')} ><AddIcon sx={{mb:"4px"}}/></span>
               </div>
             </div>
             <div className="">
               <img className="w-[150px] h-[170px] object-cover rounded-[15px]" src={img_3} />
               <div className="bg-[#FFFFFF]/50 flex h-[25px]  mt-2  self-center  w-full justify-between	 items-center rounded-[27px] ">
-                <span className="px-2" onClick={() => handleDecrement('XL')} >-</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleDecrement('XL')} ><RemoveIcon sx={{mb:"3px"}}/></span>
                 <span>{dataValue.model.XL}</span>
-                <span className="px-2" onClick={() => handleIncrement('XL')} >+</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleIncrement('XL')} ><AddIcon sx={{mb:"4px"}}/></span>
               </div>
             </div>
             <div className="">
               <img className="w-[150px] h-[170px] object-cover rounded-[15px]" src={img_4} />
               <div className="bg-[#FFFFFF]/50 flex h-[25px]   mt-2 self-center  w-full justify-between	 items-center rounded-[27px] ">
-                <span className="px-2" onClick={() => handleDecrement('Ultra')} >-</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleDecrement('Ultra')} ><RemoveIcon sx={{mb:"3px"}}/></span>
                 <span>{dataValue.model.Ultra}</span>
-                <span className="px-2" onClick={() => handleIncrement('Ultra')}>+</span>
+                <span className="px-2  text-[20px] w-[30%] text-center" onClick={() => handleIncrement('Ultra')}><AddIcon sx={{mb:"4px"}}/></span>
               </div>
             </div>
 

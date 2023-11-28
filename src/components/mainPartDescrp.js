@@ -90,7 +90,7 @@ export default function MainDescrp() {
         <p className="text-[17px] font-[600] pt-2">Розмір: 10 x 8 см.</p>
         <AnimSlider firstPrice={"360 грн"} secondPrice={"180 грн"}></AnimSlider>
         <ButtonWrapperOrder />
-        <div className="flex flex-col gap-2 items-center gap-4">
+        <div className=" mt-[5%] flex flex-col gap-2 items-center gap-4">
           <div className="flex items-center gap-4">
             <div className={miniBlockStyle}>1000+ використань</div>
             <div className={miniBlockStyle}>Гріє 40 хвилин</div>
